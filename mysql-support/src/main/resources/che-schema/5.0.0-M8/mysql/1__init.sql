@@ -208,7 +208,7 @@ ALTER TABLE projectattribute ADD CONSTRAINT fk_projectattribute_dbattributes_id 
 -- Project attribute values ----------------------------------------------------
 CREATE TABLE projectattribute_values (
     projectattribute_id     BIGINT,
-    values                  VARCHAR(255)
+    `values`               VARCHAR(255)
 );
 --constraints
 ALTER TABLE projectattribute_values ADD CONSTRAINT fk_projectattribute_values_projectattribute_id FOREIGN KEY (projectattribute_id) REFERENCES projectattribute (id);
@@ -385,7 +385,7 @@ CREATE TABLE stack (
     scope               VARCHAR(255),
     origin              VARCHAR(255),
     type                VARCHAR(255),
-    data                BYTEA,
+    data                BLOB,
     mediatype           VARCHAR(255),
     icon_name           VARCHAR(255),
     workspaceconfig_id  BIGINT,
